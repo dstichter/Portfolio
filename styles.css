@@ -1,0 +1,13 @@
+body {
+  background-color: orange;
+  background: url("dstichter.jpg") no-repeat top right;
+}
+p {
+  color:blue;
+  
+}
+.smimages {
+  height: 32px;
+  width: auto;
+  border: 1px solid black;
+}
