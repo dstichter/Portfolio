@@ -1,13 +1,61 @@
 body {
-  background-color: orange;
-  background: url("dstichter.jpg") no-repeat top right;
+  background-color: #202020;
+  color: #C0C0C0
 }
-p {
-  color:blue;
-  
+
+h1 {
+  color:#C0C0C0;
+  }
+
+h2{
+  text-align: center;
 }
-.smimages {
+
+p{
+  text-align: center;
+}
+.sm_images {
   height: 32px;
   width: auto;
   border: 1px solid black;
+  }
+
+.my_image {
+  display: block;
+  height: 200px;
+  width: auto;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+.title{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  
+}
+
+.navbar{
+  list-style-type: none;
+  padding: 0;
+  float: left;
+  display: block;
+  width: 110px;
+}
+
+a:link{
+  color: #C0C0C0;
+}
+
+a:visited{
+  color: green;
+}
+
+.skills{
+  text-align: center;
+  list-style-type: none;
+}
+form{
+  text-align: center;
 }
