@@ -25,22 +25,22 @@ $(document).ready(function(){
     })
   });
 //Sha on Hover
-  $('.tableBody').hover(
-    function (){
-      alert('a')  
-      $(this).attr('data-hold', $(this).html);
-      $(this).html($(this.attr('id')));
-    },
-    function (){      
-      $(this).attr('id', $(this.html));
-      $(this).html($(this.attr('data-hold')));
-    });
+$("table").on('mouseenter', '.tableRow', function() {
+  var placeHolder = $(this).children('.shaID')
+  var hrefLink = $('<a>').html(placeHolder.attr('id')).attr('href', placeHolder.attr('data-commit-href'))
+  placeHolder.attr('data-hold',placeHolder.html());
+  placeHolder.html("")
+  placeHolder.append(hrefLink);
+});
+$("table").on('mouseleave', '.tableRow', function() {
+  var placeHolder = $(this).children('.shaID')
+  placeHolder.html(placeHolder.attr('data-hold'));
+});
   function getRepos(repoData){
 
     var commitsApiUrl = "https://api.github.com/repos/";
     commitsApiUrl += repoData.owner.login + "/";
     commitsApiUrl += repoData.name + "/commits";
-
     var newRepoLink = $('<a>').attr('href', commitsApiUrl)
       .addClass("list-group-item")
       .append(repoData.name);
@@ -51,11 +51,14 @@ $(document).ready(function(){
     var newUserName = $('<td>')
       .append(repoCommits.commit.author.name).append(' : ')
       .append(repoCommits.author.login)
-      .attr('id', repoCommits.sha);
+      .attr('id', repoCommits.sha)
+      .addClass('shaID')
+      .attr('data-commit-href', repoCommits.html_url);
     var newDate = $('<td>').append(repoCommits.commit.author.date)
     var newMessage = $('<td>').append(repoCommits.commit.message)
 
-    var newTableRow = $('<tr>').append(newUserName).append(newDate).append(newMessage);
+    var newTableRow = $('<tr>').addClass('tableRow').append(newUserName).append(newDate).append(newMessage);
+
     return newTableRow;
   }
 });

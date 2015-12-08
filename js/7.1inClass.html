@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <div id="content"></div>
+    <button>band me</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+    var bands = ['foo fighters', 'sublime', 'guns \'n roses'];
+
+    $('button').on('click', function(){
+      bandMe();
+    });
+
+    function bandMe(){
+
+      var ranNum = Math.floor(Math.random() * bands.length);
+      $('#content').html(bands[ranNum]);
+    }
+    bandMe();
+</script>
+</body>
+</html>
