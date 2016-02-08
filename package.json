@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "David Stichter's Portfolio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dstichter/Portfolio.git"
+  },
+  "author": "David Stichter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dstichter/Portfolio/issues"
+  },
+  "homepage": "https://github.com/dstichter/Portfolio#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
